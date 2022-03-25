@@ -5,7 +5,7 @@ class Persona
     public $id;
     public $names;
     public $subject;
-    public $date;
+    public $datetime;
     public $time;
    
 
@@ -66,20 +66,46 @@ class Persona
 			die($e->getMessage());
 		}
 	}
+	public function Actualizar($data)
+	{
+		try 
+		{
+			$sql = "UPDATE Citas SET 
+		            	id          = ?, 
+						names          = ?, 
+						subject        = ?,
+                        datetime        = ?,
+					
+				    WHERE id = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+						$data->id, 
+                        $data->names, 
+                        $data->subject,
+                        $data->datetime,
+					)
+				);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
     public function Registrar($data)
 	{
 		try 
 		{
-		$sql = "INSERT INTO `Citas` (id,subject,names) 
+		$sql = "INSERT INTO `Citas` (names,subject,datetime) 
 		        VALUES (?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-                    $data->id, 
                     $data->names,
                     $data->subject,
-                                  
+					$data->datetime,
+				                 
                 )
 			);
 		} catch (Exception $e) 

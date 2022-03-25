@@ -8,28 +8,38 @@
 </ol>
 
 <form action="?c=Persona&a=Guardar" method="post" enctype="multipart/form-data">
-<div class="form-group">
-        <label>Id</label>
-        <input type="number" name="id" value="<?php echo $alm->id; ?>" class="form-control" placeholder="Ingrese su nombre y Apellido" data-validacion-tipo="requerido|min:3" />
-    </div>
+     
+
     
     <div class="form-group">
-        <label>name</label>
-        <input type="text" name="names" value="<?php echo $alm->names; ?>" class="form-control" placeholder="Ingrese su nombre y Apellido" data-validacion-tipo="requerido|min:3" />
+        <label>Name</label>
+        <input type="text" name="names" value="<?php echo $alm->names; ?>" class="form-control" placeholder="Ingrese su nombre" data-validacion-tipo="requerido|min:3" />
     </div>
     <div class="form-group">
         <label>Subject</label>
-        <input type="text" name="subject" value="<?php echo $alm->subject; ?>" class="form-control" placeholder="Ingrese su nombre y Apellido" data-validacion-tipo="requerido|min:3" />
+        <input type="text" name="subject" value="<?php echo $alm->subject; ?>" class="form-control" placeholder="Ingrese su tema" data-validacion-tipo="requerido|min:3" />
     </div>
-    
-  
-    
-   
-    
+    <div class="form-group">
+        <label>Date appointment</label>
+        <input type="datetime-local" name="datetime" value="<?php echo $alm->datetime; ?>" class="form-control" placeholder="Ingrese fecha y hora" data-validacion-tipo="requerido|min:3" />
+    </div>
+       
     <hr />
     
     <div class="text-right">
         <button class="btn btn-success">Guardar</button>
     </div>
+    <script>
+    config=
+    {
+        enableTime:true,
+        noCalendar:true,
+        dateFormat:"H:1",
+        time_24hr:true
+    }
+    flatpickr("input[type=datetime-local]", config)
+</script>
 </form>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
