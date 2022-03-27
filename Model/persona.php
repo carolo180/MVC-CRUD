@@ -1,5 +1,5 @@
 <?php
-class Persona
+class Citas
 {
 	private $pdo;
     public $id;
@@ -70,23 +70,23 @@ class Persona
 	{
 		try 
 		{
-			$sql = "UPDATE Citas SET 
-		            	id          = ?, 
+			$sql = "UPDATE Citas SET       
 						names          = ?, 
 						subject        = ?,
-                        datetime        = ?,
+                        datetime        = ?
 					
 				    WHERE id = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-						$data->id, 
-                        $data->names, 
+						$data->names, 
                         $data->subject,
                         $data->datetime,
+						$data->id
 					)
 				);
+				
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());

@@ -6,7 +6,7 @@ class PersonaController{
     private $model;
     
     public function __CONSTRUCT(){
-        $this->model = new Persona();
+        $this->model = new Citas();
     }
     
     public function Index(){
@@ -14,7 +14,7 @@ class PersonaController{
         
     }
     public function Crud(){
-        $alm = new Persona();
+        $alm = new Citas();
         
         if(isset($_REQUEST['id'])){
             $alm = $this->model->getting($_REQUEST['id']);
@@ -25,8 +25,8 @@ class PersonaController{
     }
 
     public function Guardar(){
-        $alm = new Persona();
-     
+        $alm = new Citas();
+        $alm->id = $_REQUEST['id'];
         $alm->names = $_REQUEST['names'];
         $alm->subject = $_REQUEST['subject'];
         $alm->datetime = $_REQUEST['datetime'];

@@ -9,7 +9,7 @@
 
 <form action="?c=Persona&a=Guardar" method="post" enctype="multipart/form-data">
      
-
+<input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
     
     <div class="form-group">
         <label>Name</label>
