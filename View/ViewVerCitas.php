@@ -19,10 +19,9 @@
             <th >Id</th>
             <th>Nombre</th>
             <th>Tema</th>
-            <th>FEcha y hora de la cita</th>
+            <th>Fecha</th>
+            <th>Hora</th>
             <th>Agendada</th>
-          
-        
         </tr>
     </thead>
     <tbody>
@@ -31,7 +30,8 @@
             <td><?php echo $r->id; ?></td>
             <td><?php echo $r->names; ?></td>
             <td><?php echo $r->subject; ?></td>
-            <td><?php echo $r->datetime; ?></td>
+            <td><?php echo $r->date; ?></td>
+            <td><?php echo $r->time; ?></td>
             <td><?php echo $r->scheduled; ?></td>
             
           
@@ -56,19 +56,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Do you want to delete this register?
-        <h6 id="campId">id:</h6>
+        Do you want to delete next register?
+        <h6 id="campId">id:,<br></br></h6>
         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-danger">
-        <a href="?c=Persona&a=Eliminar&id=" id="data-bs-action"> Eliminar</a>
+        <a href="?c=Persona&a=Eliminar&id=" id="data-bs-action" onclick="return alert('Registro Eliminado')"> Eliminar</a>
         </button>
       </div>    
     </div>
   </div>
 </div>
+
 
 <script>
     var deleteModal = document.getElementById('deleteModal')

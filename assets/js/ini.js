@@ -1,6 +1,7 @@
-$(document).ready(function(){
-    $(".datepicker").datepicker({
-        dateFormat: 'yy-mm-dd'
-    });	
+
+clean.addEventListener("click", e =>{
+    e.preventDefautlt()
+    console.log("hola mundo")
+  
 })
 

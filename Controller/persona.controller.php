@@ -13,6 +13,7 @@ class PersonaController{
         require_once 'View/ViewVerCitas.php';
         
     }
+    
     public function Crud(){
         $alm = new Citas();
         
@@ -29,7 +30,8 @@ class PersonaController{
         $alm->id = $_REQUEST['id'];
         $alm->names = $_REQUEST['names'];
         $alm->subject = $_REQUEST['subject'];
-        $alm->datetime = $_REQUEST['datetime'];
+        $alm->date = $_REQUEST['date'];
+        $alm->time = $_REQUEST['time'];
      
         // SI ID PERSONA ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA PERSONA, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
         $alm->id > 0 
